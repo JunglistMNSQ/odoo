@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_test_task_test_task,test_task.test_task,model_test_task_test_task,,1,0,0,0

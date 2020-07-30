@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- add feature auto re-order -->
+    <record id="view_template_property_form_with_reorder" model="ir.ui.view">
+        <field name="name">product.template.stock.property.form.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='options']" position="inside">
+                <div attrs="{'invisible': ['|',('type', '!=', 'product'), ('purchase_ok', '=', False)] }">
+                    <field name="auto_re_order_ok"/>
+                    <label for="auto_re_order_ok"/>
+                </div>
+                <div attrs="{'invisible': ['|', ('auto_re_order_ok', '=', False), ('purchase_ok', '=', False)]}">
+                    <field name="auto_re_order_condition" string="Value"/>
+                    <label for="auto_re_order_condition"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    </data>
+</odoo>
